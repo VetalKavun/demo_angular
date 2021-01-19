@@ -1,3 +1,4 @@
+import { Routes, RouterModule} from '@angular/router'
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,9 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title: string;
+  title: string = 'Spring Boot - Angular Application';
 
-  constructor(){
-    this.title = "Spring Boot Angular Application"
-  }
 }

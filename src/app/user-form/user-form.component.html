@@ -1,11 +1,12 @@
 <div class="card my-5">
     <div class="card-body">
-        <form (ngSubmit) = "onSubmit" #userForm="ngForm">
+        <form (ngSubmit) = "onSubmit()" #userForm="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" [(ngModel)]="user.name"
                     class="form-cotnrol"
                     id="name"
+                    name="name"
                     placeholder="Enter your name"
                     required #name="ngModel"
                 >  
@@ -16,12 +17,13 @@
                 <input type="text" [(ngModel)]="user.email"
                     class="form-cotnrol"
                     id="email"
+                    name="email"
                     placeholder="Enter your email"
                     required #email="ngModel"
                 >  
             </div>
             <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
-            <button type="submit" [disabled]="!userForm.form.valid" 
+            <button type="submit" [disabled]="!userForm.form.valid"
               class="btn btn-info">Submit</button>
         </form>
     </div>
